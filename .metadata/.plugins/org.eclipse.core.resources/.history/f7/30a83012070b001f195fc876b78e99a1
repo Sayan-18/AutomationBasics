@@ -1,0 +1,19 @@
+package TestBot.Appium;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+
+public class iOSSwipeDemo extends iOSBaseTest{
+	@Test
+	public void iOSLongPressTest() throws InterruptedException {
+
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("bundleId", "com.apple.mobileslideshow");
+		driver.executeScript("mobile:launchApp", params );
+		
+
+	}
+}
