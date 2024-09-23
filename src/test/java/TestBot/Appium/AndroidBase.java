@@ -31,11 +31,11 @@ public class AndroidBase {
 	AppiumDriverLocalService server;
 	public AndroidDriver driver;
 
-	// Method to create log file with a unique timestamp
+	// Method to create log file with a unique time stamp
 	private File createLogFile() throws IOException {
-		// Create timestamp
+		// Create time stamp
 		String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		// Define log file path with timestamp
+		// Define log file path with time stamp
 		String logFilePath = "C:\\Users\\datsayan\\Documents\\Learning\\Sayan\\Appium\\logs\\AppiumLog_" + timestamp
 				+ ".txt";
 		File logFile = new File(logFilePath);
@@ -50,7 +50,7 @@ public class AndroidBase {
 
 	@BeforeClass
 	public void configureAppium() throws MalformedURLException, URISyntaxException, IOException {
-		// Create a log file for each test run with a timestamp
+		// Create a log file for each test run with a time stamp
 		// File logFile = createLogFile();
 
 		// Redirect System.out and System.err to the log file
@@ -84,6 +84,8 @@ public class AndroidBase {
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("2a65445a3f047ece");
 		options.setPlatformName("Android");
+		options.setChromedriverExecutable(
+				"C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\chromedriver.exe");
 		// options.setApp(
 		// "C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\ApiDemos-debug.apk");
 		options.setApp(
@@ -132,6 +134,11 @@ public class AndroidBase {
 	public void dragAndDropActionByid(WebElement ele, int endX, int endY, int speed) {
 		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of("elementId",
 				((RemoteWebElement) ele).getId(), "endX", endX, "endY", endY, "speed", 75));
+	}
+
+	public double getFormattedValue(String S) {
+		Double D = Double.parseDouble(S.replace("$", ""));
+		return D;
 	}
 
 	@AfterClass
