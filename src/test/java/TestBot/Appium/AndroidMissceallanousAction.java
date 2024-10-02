@@ -4,7 +4,6 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;

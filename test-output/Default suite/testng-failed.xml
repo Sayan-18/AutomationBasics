@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestBot.Appium.AndroidEcommerce_tc_4_Hybrid">
+      <class name="TestBot.Appium.AndroidMobileBrowserTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="fillForm"/>
+          <include name="mobileBrowserTest"/>
           <include name="configureAppium"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- TestBot.Appium.AndroidEcommerce_tc_4_Hybrid -->
+      </class> <!-- TestBot.Appium.AndroidMobileBrowserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

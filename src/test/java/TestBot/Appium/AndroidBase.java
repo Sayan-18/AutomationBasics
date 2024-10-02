@@ -15,9 +15,7 @@ import org.testng.annotations.BeforeClass;
 import com.google.common.collect.ImmutableMap;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -86,10 +84,8 @@ public class AndroidBase {
 		options.setPlatformName("Android");
 		options.setChromedriverExecutable(
 				"C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\chromedriver.exe");
-		// options.setApp(
-		// "C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\ApiDemos-debug.apk");
 		options.setApp(
-				"C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\General-Store.apk");
+				"C:\\Users\\datsayan\\Documents\\Learning\\MobileAutomation\\AppiumBasics\\src\\test\\resources\\ApiDemos-debug.apk");
 
 		driver = new AndroidDriver(new URI("http://127.0.0.1:4725").toURL(), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
